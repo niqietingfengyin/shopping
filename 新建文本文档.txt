@@ -1,0 +1,83 @@
+1.<li>
+   <a href='#'>衬衣</a>
+   <ul><li>
+          <a href='#'>长袖衬衣</a>
+      </li>
+   </ul>
+  </li>
+
+2.设置css
+  1） 首先设置全局样式：margin,padding, font,line-height,a ,a:hover,ul li text-decoration,list-style等
+  2）设置header过程：  margin:10px auto； //可自动把头部置于窗口中间，10px默认为header距离上窗口边的距离；
+    font-weight：700;//负责加粗字体
+    line-hight:80px ;//文本会根据行高来设置字体在行中的位置；
+    右上角的颜色图片利用： #skin——#skin li有层次的设置样式，这一部分的背景图片有问题： ？？？？？？？？？？？
+   3）设置导航栏：以层次递进进行设置样式
+      先给ul设置position:absolute；width：80px;overfolow:hidden;可以固定每一项的宽度；display:none可以隐藏某些选项
+      然后定位到li 或者更进一步到 a,设置边框的颜色,背景颜色，字体大小等
+      
+      导航栏#navigation设置的宽度734加上两边的padding的16为750才是蓝色底框的宽度；
+
+    4）主体部分：第一个外围div一般设置成position:relative；内维设置position:absolute;//参考上下拉的符号位置设置
+    5）background:url('') no-repeat 0 0;某些情况下等价于
+       list-style-image:url('');
+    6）float:right;浮动在右边，且显示为54321
+       float：left;浮动在左边，且显示为12345
+     7）设置字体时，最好设置widht,height,line-height,因为line-height有默认值，一般大于字体的高度，会影响字体在背景上显示的位置；参考‘新款上市’的位置；（index.css）
+      
+3.上下拉图标变化，用自定义的slide.js文件，
+其中用toggle(function(){},function(){})实现在两个函数之间转换，
+其中再调用slideToggle(time,function(){})来实现上下拉时间控制，还有完成隐藏或显示之后的图标变化；
+
+用$('').toggle(fun1,fun2),不用外围添加click；默认就是单击时触发；
+
+衬衣：长袖衬衣、短袖衬衣处图标的变化是css中的background样式的修改，不用直接用atrr('','')因为background不是html中的属性，需要用.css('background','url("images/tree.gif") no-repeat 0 0')；这里的url外必须加上引号，且直接定位到http://localhost/tao文件夹；
+另一种方式，用attr('class','')修改class属性，然后在css中为新属性添加另一个背景，也能达到修改图标的目的；
+
+定位同级别的上一个元素，可以用prev();
+定位到同级别下一个元素，next（）
+定位到上一级的父元素.parent(),所有的父元素.parents()
+子元素选择器选择第一级的子元素$('ul.m-treeview >li>span');先定位到ul的第一级子元素的所有li,然后定位到这些li的第一级子元素的所有span;（子元素选择权即选择子辈，不选孙子辈）参考tree.js
+
+4）设置好容器div的宽度，可整体移动；（imgSlide.js）
+
+.hover(fun1,fun2)；当鼠标略过该元素时，会依次执行fun1,fun2
+.animate({top:'-140px'},3000);
+var sc=setInterval(funcName,2000);常与animate一起用，循环执行某操作；
+clearInterval(sr);//用于取消循环操作；
+
+setTimeout()与clearTimeout()一起用，setTimeout(func,5000)执行时隔5s去调用func,如果func执行需要2s，那么整个过程需要7s;
+setInterval(func,5000)执行不会被func束缚，只是每隔5s就重复执行func;
+
+5）<div><ul><li><li></ul></div>这种格式，
+div相当于一个容器，设定宽度/高度之后只能显示这个宽度高度的内容，
+ul相当于容器中的内容，可设置宽度/高度，用于整体移动，
+li设置宽度/高度可以在该宽度/高度内完整呈现；
+
+6)tooltip.js中设置$('.tip')显示时需要先确定position：absolute；再设置x,y坐标才有效；
+e.pageX, e.pageY返回鼠标的坐标位置；
+.mouseover()鼠标放上去时触发；
+.mousemove()鼠标移动时触发，可随时更新提示框随着鼠标位置移动；
+.mouseout()鼠标离开时触发；
+
+detail.html
+
+1)<div><ul><li><img>这种类型的要鼠标拂过时有边框，在img元素设置图片width,heigt;
+然后在li设置display:block;float:left;heigt;padding:1px;border:1px solid #fff; 然后对li:hover元素设置padding：1px;background:#999;当然前提是容器div宽高足够；（重点是li设置；）
+参考选择颜色部分；
+
+2）打分处：<ul><li><a>格式；
+首先给ul一个背景星星图片显示；
+然后把原来的带有数字的li 浮动横向显示 并左缩进 隐藏；
+然后给其中的a元素绝对位置定位，并对应到每个分数星星上去；
+然后给鼠标hover过时的a添加背景图片，并覆盖原图片显示（z-index:2;）；
+然后给特定的分数星星显示特定的图片；
+
+打分原理：隐藏原有li,换上新的a的内容，即五颗星星，当鼠标略过每个星星时，用该a外围li的类 定位到不同的背景图片 显示；
+当点击过后，会给整个ul换一个 类名，每个特定的类名对应不同的背景图片；
+
+其中background-position只是定位到要显示的图片部分的起始位置，因此在显示图片的地方需要先限制宽、高等；
+
+3）<link rel='stylesheet' href='style/main.css' type='text/css'/>添加的前后顺序对样式有重要的影响，后来添加的样式会覆盖原来的样式；参考：skin_0.css和detail.css中对‘商品信息’行的背景颜色改变；
+
+4）对同一元素定位时，最好使用相同的方式，或者ul.rating{} ul.nostar{}, ul.onestar{}；或者.rating{},.nostar{},.onestar{};参考打分部分（detail.css中），否则容易导致不一致；

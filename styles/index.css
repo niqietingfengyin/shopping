@@ -1,0 +1,206 @@
+/**整体样式*/
+#content  {
+           margin:10px auto;
+		   width:750px;
+		   
+           } 
+    /**左侧样式*/
+ .content_left { background:#eee;
+               float:left;
+                text-align:left;
+				
+      			width:150px;
+				border:1px solid #aaaaaa;
+              }
+/**左侧上部更新的滚动信息*/
+.global_module_news {
+                      position:relative;
+                      background:#eeeeee;
+                      padding-bottom:9px;					  
+                    }
+/**鼠标移动时，浮动的提示框*/					
+.tip {
+       position:absolute;
+	   background:#eee;
+	   border:1px solid #aaa;
+     }
+/**标题行*/					
+.global_module_news h3 {  height:26px;
+                         padding-top:4px;
+                         text-indent:6px;
+                          background:#3b5998;
+				          color:#fff;
+                   }
+.global_module_news .scrollNews {
+                              position:relative;
+                              width:120px;
+							  padding-left:5px;
+							  text-indent:10px;
+                               line-height:22px;
+							  height:85px;
+							  overflow:hidden;
+                            }
+.global_module_news .scrollNews  ul {
+                                   position:absolute;
+                                   }
+
+/**上拉、下拉符号的位置设置*/
+.module_up_down  {
+                  position:absolute;
+				  top:9px;
+				  right:10px;
+				  cursor:pointer;
+                    }
+					
+/**左下部 产品分类*/
+.global_module_procatalog  {
+                              position:relative;
+							  background:#eee;
+							  padding-top:5px;
+                             }	
+/**标题行设置*/
+ .global_module_procatalog h3 {  height:26px;
+                              padding-top:4px;
+                               text-indent:6px;
+                              background:#3b5998;
+				               color:#fff;
+                           }
+/**设置字体内边距，及行距*/						   
+.global_module_procatalog { padding:5px;
+                            line-height:24px;
+                            background:#ffffff;
+                            }		
+/**针对左下角里所有的span区域*/							
+.global_module_procatalog .m-treeview li span{
+                                cursor:pointer;
+                                         }	
+/**衬衫、裤子类型前的图片设置，也可以用list-style-images*/										 
+.global_module_procatalog  .m-treeview  li.m-expanded {
+                                                 padding-left:16px;
+	                                             background:url('../images/treeview-expanded.gif') no-repeat 0 0;
+                                               }
+.global_module_procatalog  .m-treeview  li.m-collapsed {
+                                                 padding-left:16px;
+	                                             background:url('../images/treeview-collapsed.gif') no-repeat 0 0;
+/**长袖、短袖等分类前的图片*/                                                      }											  
+.global_module_procatalog  .m-treeview  li.m-expanded  ul li {
+                                                margin-left:15px;
+	                                            list-style-image:url('../images/treeview-item.gif');
+                                                    }
+.global_module_procatalog  .m-treeview  li.m-collapsed  ul  {
+                                                     display:none;
+                                                         } 													
+				   
+/**右边设置*/				
+ .content_right {  
+                   float:right;
+                    width:580px;
+					border:1px solid #aaaaaa;
+					
+              }
+/**右上部广告和提示数字*/
+.content_right .ad {   position:relative;
+                       height:150px;
+					   overflow:hidden;
+					   margin-bottom:10px;
+					   border:0.5px solid #eeeeee;
+                      }
+.content_right .ad .slider {
+                           position:absolute;
+						   height:775px;
+                           }
+.content_right .ad .slider li {
+                             height:150px;
+                           }
+					  
+/**数字显示位置设定*/
+.content_right .ad  .num {
+                         position:absolute;
+                          z-index:100;
+                          top:120px;						  
+                          right:10px;
+                           width:120px;					  
+                      }
+/*每个数字宽度、高度、背景等*/
+.content_right .ad  .num li {   display:block;
+                              float:left;
+							  background:#42ab33;
+							  width:16px;
+							  height:16px;
+							  line-height:16px;
+							  border:1px solid #3123vf;
+							  margin:3px;
+							  text-align:center;
+							  cursor:pointer;
+							 
+		                    }	
+/**当前显示的图片会添加一个类on,给对应的数字特殊样式*/
+.content_right .ad  ul.num li.on { 
+                                 background:#12fe32;
+								 width:20px;
+								 line-height:20px;
+								 margin:0;
+								 font-size:16px;
+								 font-weight:bold;
+				                 }
+
+								 
+/**新款上市 位置、宽度、高度、边框*/
+div.global_module_prolist	{ position:relative; 
+                          width:580px;
+                           height:220px;
+						   overflow:hidden;
+                           border:1px solid #eeeeee;
+                        }
+/**h3字体背景宽度、高度，及行高位置等*/						
+.global_module_prolist h3  {
+                            width:580px;
+							height:25px;
+							background:#3b5998;
+							color:#fff;
+							font-weight:bold;
+							font-size:1.2em;
+							line-height:25px;
+							padding:5px;
+                              }	
+/**h3标题栏右侧的左右移动符号 位置设定*/
+.global_module_prolist .module_left_right {
+                                            position:absolute;
+											top:10px;
+											right:10px;
+											cursor:pointer;
+										 }	
+.global_module_prolist .prolist_content {  
+                                         position:absolute;
+										 width:1800px;
+										 height:200px;
+										 left:0px;
+                                         }									 
+	/**衬衫整体在div中的位置*/									 
+.global_module_prolist .prolist_content ul{  
+                                        float:left;
+                                        height:200px;
+										margin-left:15px;
+                                         }
+                                       
+    /**衬衫等图片的平行放置，及span中字体的位置*/                                   
+.global_module_prolist .prolist_content ul  li{
+                                             display:inline;
+                                             float:left;
+											 padding:5px;
+											 width:128px;
+											 height:220px;
+											 text-align:center;
+                                            }
+                                       
+.global_module_prolist  .prolist_content ul  li   img { 
+                                                   display:block;
+												   width:124px;
+												   height:124px;
+												   background:#eee;
+												   
+                                                  }
+.global_module_prolist div.prolist_content ul  li span {
+                                                    display:block;
+													overflow:hidden;
+                                                     }
