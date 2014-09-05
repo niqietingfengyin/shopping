@@ -1,15 +1,17 @@
 $(function(){
       var $li=$('#skin li');
 	  $li.click(function(){
-	                switchColor(this.id);
+	               switchColor(this.id);
+		       
 					 });
 	    var cc=$.cookie('backColor');
 		   if(cc)
 		    {
-				switchColor(cc);	     
+				switchColor(cc);
 			   }
 
 });
+
 function   switchColor(skinName)
   {
   $('#'+skinName).addClass('selected')
